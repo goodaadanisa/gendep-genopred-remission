@@ -1,0 +1,4 @@
+metric_order	metric	estimate	lower_95	upper_95	positive_value_interpretation	uncertainty_scope
+1	AUC	-0.00555175246440307	-0.011261124041621	0.000358308232931726	Favours addition of PRS	10000 participant-level outcome-stratified paired bootstrap replicates conditional on fixed saved predictions
+2	Brier score	-0.00128289244787926	-0.00307040900132819	0.000555958542866695	Favours addition of PRS	10000 participant-level outcome-stratified paired bootstrap replicates conditional on fixed saved predictions
+3	Log loss	-0.00239331648791199	-0.0067537999891963	0.00224016279624752	Favours addition of PRS	10000 participant-level outcome-stratified paired bootstrap replicates conditional on fixed saved predictions

@@ -1,0 +1,49 @@
+name: tests
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  python:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+          cache: pip
+      - name: Install project and test dependencies
+        run: python -m pip install -e '.[test]'
+      - name: Check installed dependencies
+        run: python -m pip check
+      - name: Compile Python sources
+        run: python -m compileall -q scripts src tests
+      - name: Run Python tests
+        run: python -m pytest
+      - name: Validate public release contents
+        run: gendep validate
+
+  syntax:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v6
+      - name: Set up R
+        uses: r-lib/actions/setup-r@v2
+      - name: Parse R entry points and engines
+        shell: Rscript {0}
+        run: |
+          files <- c(
+            list.files("scripts", pattern = "[.]R$", full.names = TRUE),
+            list.files("src/R", pattern = "[.]R$", full.names = TRUE)
+          )
+          invisible(lapply(files, parse))
+      - name: Test target construction
+        run: Rscript tests/test_build_target.R
+      - name: Test runtime-version normalisation
+        run: Rscript tests/test_runtime_version.R
+      - name: Check shell syntax
+        run: bash -n scripts/run_genopred.sh

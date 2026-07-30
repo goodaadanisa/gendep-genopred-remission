@@ -1,0 +1,18 @@
+section	order_index	metric_id	label	value	percent_of_start	drop_from_previous	drop_percent_from_previous	note
+processing	1	supplied_variants	Supplied rsID-only genotype matrix	524876	100.0			Start set used for reconstruction.
+processing	2	autosomal_snvs	Reconstructed autosomal SNVs	492071	93.75	32805	6.25	Autosomal SNVs with reconstructed alleles and coordinates.
+processing	3	official_genopred_reference_overlap	Official GenoPred reference overlap	147438	28.09	344633	70.04	Exact rsID matches to the official GenoPred target reference.
+processing	4	orientation_resolved_target	Orientation-resolved target markers	147370	28.08	68	0.05	Markers retained in the final validated target set.
+processing	5	prscs_compatible_scoring_variants	PRS-CS-compatible scoring variants	141038	26.87	6332	4.3	Final scoring ceiling used for Bayesian PRS generation.
+diagnostic	1	official_genopred_reference_matches	Official GenoPred reference matches	147438				Markers matched to the official GenoPred target reference.
+diagnostic	2	prscs_compatible_subset	PRS-CS-compatible scoring variants	141038				Subset available in the PRS-CS scoring reference.
+diagnostic	3	conservative_orientation_sensitivity_retained	Conservative sensitivity retained	140085				Subset retained after excluding orientation-uncertain markers.
+diagnostic	4	three_resource_diagnostic_subset	Three-resource diagnostic subset	71916				Markers represented across all three diagnostic resources.
+diagnostic	5	same_order_alleles	Same-order alleles	38088				PRS-CS-compatible markers already in the required order.
+diagnostic	6	swapped_order_alleles_corrected	Swapped-order alleles corrected	102950				PRS-CS-compatible markers requiring allele-order swapping.
+diagnostic	7	absent_from_prscs_after_orientation	Absent from PRS-CS after orientation	6332				Oriented target markers not available in the PRS-CS reference.
+validation	1	validated_chromosomes	Validated chromosomes	22				All chromosomes passed round-trip validation.
+validation	2	validated_participants	Validated participants	430				Participant count in the final validated target set.
+validation	3	validated_variants	Validated variants	147370				Variant count in the final validated target set.
+validation	4	roundtrip_genotype_comparisons	Round-trip genotype comparisons	63369100				Exact genotype-call comparisons used in PLINK2 validation.
+validation	5	validation_mismatches	Validation mismatches	0				No mismatches were observed in the final round-trip validation.

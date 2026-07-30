@@ -1,0 +1,7 @@
+metric	value	display_label
+matched_variants	147438	Matched variants
+pearson_correlation	0.98693535648433806	Pearson correlation
+retained_standard	146366	retained standard
+retained_sample_frequency_flip	899	retained sample frequency flip
+retained_sample_frequency_tie	105	retained sample frequency tie
+excluded_eur_frequency_tie	68	excluded eur frequency tie

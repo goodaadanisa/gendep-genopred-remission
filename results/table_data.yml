@@ -1,0 +1,2927 @@
+# Structured source for five main and fifteen supplementary dissertation tables.
+# See results/tables.md for the human-readable rendering.
+tables:
+# Main tables
+- id: table_01_baseline_characteristics
+  title: Table 1. Baseline characteristics of the analysis cohort, overall and by treatment.
+  columns:
+  - characteristic
+  - overall_n430
+  - treatment_group_1_n210
+  - treatment_group_2_n220
+  - summary_type
+  rows:
+  - - Age, years
+    - 42.23 (11.43)
+    - 42.77 (11.46)
+    - 41.71 (11.41)
+    - mean (SD)
+  - - Age at onset, years
+    - 31.38 (10.79)
+    - 30.61 (10.58)
+    - 32.11 (10.95)
+    - mean (SD)
+  - - Body mass index
+    - 25.65 (4.81)
+    - 25.81 (5.27)
+    - 25.49 (4.32)
+    - mean (SD)
+  - - MADRS baseline score
+    - 29.37 (6.56)
+    - 29.83 (6.65)
+    - 28.92 (6.45)
+    - mean (SD)
+  - - HRSD-17 baseline score
+    - 24.30 (5.99)
+    - 24.51 (6.26)
+    - 24.11 (5.73)
+    - mean (SD)
+  - - BDI baseline score
+    - 28.73 (9.29)
+    - 28.90 (9.61)
+    - 28.58 (8.99)
+    - mean (SD)
+  - - Sex code 1, n (%)
+    - 277 (64.4)
+    - 137 (65.2)
+    - 140 (63.6)
+    - n (%)
+  - - Current smoker, n (%)
+    - 177 (41.2)
+    - 83 (39.5)
+    - 94 (42.7)
+    - n (%)
+  - - Remission, n (%)
+    - 166 (38.6)
+    - 72 (34.3)
+    - 94 (42.7)
+    - n (%)
+- id: table_02_bioinformatics_processing
+  title: Table 2. Key bioinformatics processing and validation results.
+  columns:
+  - stage_or_validation
+  - result
+  - reference_or_denominator
+  rows:
+  - - Supplied genotype matrix
+    - 524,876 unique rsID variants
+    - 430 participants
+  - - GRCh37 autosomal SNV reconstruction
+    - 492,071 (93.7%)
+    - 32,805 not reconstructed
+  - - Official GenoPred reference overlap
+    - 147,438 (28.09%)
+    - Supplied rsID variants
+  - - Frequency-based final orientation
+    - 147,370
+    - 68 EUR frequency ties excluded
+  - - PRS-CS reference compatibility audit
+    - 141,038 (95.7%)
+    - Final oriented set; diagnostic only
+  - - Conservative orientation sensitivity
+    - 953 excluded; 140,085 retained
+    - 141,038 compatible variants; posterior effects fixed
+  - - Final PLINK2 target
+    - 22 chromosomes; 430 participants
+    - 147,370 variants
+  - - Genome-wide genotype round trip
+    - 63,369,100 exact comparisons
+    - 0 mismatches
+  - - Formatted-target allele-aware validation
+    - 0 mismatches
+    - 147,370 variants × 430 participants
+  - - Bayesian PRS matrix
+    - 8 traits × 430 participants
+    - 0 missing or non-finite values
+  - - Ancestry outputs
+    - 430 maximum-probability EUR
+    - 418 in strict model-based EUR set
+- id: table_03_model_performance
+  title: Table 3. Primary, robustness and conservative orientation-sensitivity performance comparisons from repeated nested
+    cross-validation.
+  columns:
+  - analysis_key
+  - analysis_label
+  - participants
+  - metric
+  - comparator
+  - prs_model
+  - increment
+  - lower_95
+  - upper_95
+  rows:
+  - - primary
+    - Primary Elastic Net
+    - '430'
+    - AUC
+    - '0.6939'
+    - '0.6884'
+    - '-0.00555'
+    - '-0.01126'
+    - '0.00036'
+  - - primary
+    - Primary Elastic Net
+    - '430'
+    - Brier score
+    - '0.2113'
+    - '0.2126'
+    - '-0.00128'
+    - '-0.00307'
+    - '0.00056'
+  - - primary
+    - Primary Elastic Net
+    - '430'
+    - Log loss
+    - '0.6159'
+    - '0.6183'
+    - '-0.00239'
+    - '-0.00675'
+    - '0.00224'
+  - - strict_eur
+    - Strict EUR Elastic Net
+    - '418'
+    - AUC
+    - '0.6934'
+    - '0.6853'
+    - '-0.00809'
+    - '-0.01304'
+    - '-0.00332'
+  - - strict_eur
+    - Strict EUR Elastic Net
+    - '418'
+    - Brier score
+    - '0.211'
+    - '0.2135'
+    - '-0.00253'
+    - '-0.00403'
+    - '-0.00107'
+  - - strict_eur
+    - Strict EUR Elastic Net
+    - '418'
+    - Log loss
+    - '0.6131'
+    - '0.6194'
+    - '-0.00632'
+    - '-0.00986'
+    - '-0.00281'
+  - - prs_focused
+    - PRS-focused Elastic Net
+    - '430'
+    - AUC
+    - '0.5082'
+    - '0.4925'
+    - '-0.01574'
+    - '-0.03632'
+    - '0.00511'
+  - - prs_focused
+    - PRS-focused Elastic Net
+    - '430'
+    - Brier score
+    - '0.2413'
+    - '0.2436'
+    - '-0.00232'
+    - '-0.00466'
+    - 5e-05
+  - - prs_focused
+    - PRS-focused Elastic Net
+    - '430'
+    - Log loss
+    - '0.677'
+    - '0.6821'
+    - '-0.00509'
+    - '-0.01016'
+    - -4e-05
+  - - summary_clinical
+    - Summary-predictor Elastic Net
+    - '430'
+    - AUC
+    - '0.7035'
+    - '0.6935'
+    - '-0.01002'
+    - '-0.02026'
+    - '0.00019'
+  - - summary_clinical
+    - Summary-predictor Elastic Net
+    - '430'
+    - Brier score
+    - '0.2123'
+    - '0.2145'
+    - '-0.00224'
+    - '-0.00627'
+    - '0.00186'
+  - - summary_clinical
+    - Summary-predictor Elastic Net
+    - '430'
+    - Log loss
+    - '0.6249'
+    - '0.6286'
+    - '-0.00373'
+    - '-0.01458'
+    - '0.0076'
+  - - random_forest
+    - Random Forest
+    - '430'
+    - AUC
+    - '0.7182'
+    - '0.7112'
+    - '-0.00703'
+    - '-0.01435'
+    - '0.00023'
+  - - random_forest
+    - Random Forest
+    - '430'
+    - Brier score
+    - '0.2069'
+    - '0.2084'
+    - '-0.00152'
+    - '-0.0031'
+    - '0.00014'
+  - - random_forest
+    - Random Forest
+    - '430'
+    - Log loss
+    - '0.6011'
+    - '0.6048'
+    - '-0.00372'
+    - '-0.00726'
+    - 9e-05
+  - - orientation_primary
+    - 'Orientation sensitivity: primary Elastic Net'
+    - '430'
+    - AUC
+    - '0.6939'
+    - '0.6894'
+    - '-0.00457'
+    - '-0.00992'
+    - '0.00111'
+  - - orientation_summary
+    - 'Orientation sensitivity: summary-predictor Elastic Net'
+    - '430'
+    - AUC
+    - '0.7035'
+    - '0.6927'
+    - '-0.01089'
+    - '-0.02101'
+    - '-0.00061'
+- id: table_04_individual_prs
+  title: Table 4. Adjusted individual-PRS associations with remission and cross-validated AUC increments.
+  columns:
+  - trait
+  - adjusted_odds_ratio_per_SD
+  - or_lower_95
+  - or_upper_95
+  - wald_p_value
+  - bh_fdr_p_value
+  - auc_increment
+  - auc_lower_95
+  - auc_upper_95
+  - auc_positive_repetitions
+  rows:
+  - - MDD
+    - '0.934505548835992'
+    - '0.76652178815484'
+    - '1.13930306261412'
+    - '0.502849926124386'
+    - '0.606798159751127'
+    - '-0.0067474443227455'
+    - '-0.0207880385177072'
+    - '0.0072745527564804'
+    - '0'
+  - - ANX
+    - '0.906420384942578'
+    - '0.743583109998184'
+    - '1.10491739684816'
+    - '0.330809294584684'
+    - '0.606798159751127'
+    - '-0.0051250456370938'
+    - '-0.0255294473347937'
+    - '0.0148391292442497'
+    - '0'
+  - - BIP
+    - '0.903941357672458'
+    - '0.740650140677962'
+    - '1.10323340702099'
+    - '0.320464236442107'
+    - '0.606798159751127'
+    - '0.0015151515151515'
+    - '-0.0186656854691493'
+    - '0.0218149872216137'
+    - '5'
+  - - SCZ
+    - '0.83106298137697'
+    - '0.681332577905064'
+    - '1.01369830448855'
+    - '0.0678856604185762'
+    - '0.271542641674305'
+    - '0.0117104782767433'
+    - '-0.0224088399050748'
+    - '0.0463995755750274'
+    - '10'
+  - - NEUR
+    - '0.939288102333478'
+    - '0.772161541019568'
+    - '1.14258751869496'
+    - '0.530948389782236'
+    - '0.606798159751127'
+    - '-0.0088262139466958'
+    - '-0.0227696581781672'
+    - '0.0046783155348667'
+    - '0'
+  - - INSOM
+    - '0.932285793525472'
+    - '0.765673712864363'
+    - '1.13515298515072'
+    - '0.485169074434486'
+    - '0.606798159751127'
+    - '-0.0003354326396495'
+    - '-0.0151201966958744'
+    - '0.0142118473895582'
+    - '5'
+  - - SWB
+    - '1.01071766425655'
+    - '0.828496184268778'
+    - '1.23301738286438'
+    - '0.91629413787371'
+    - '0.91629413787371'
+    - '-0.0104257940854326'
+    - '-0.0142047165936473'
+    - '-0.0068064873128879'
+    - '0'
+  - - EA
+    - '1.20619018470994'
+    - '0.987254362400506'
+    - '1.47367772389785'
+    - '0.0665835674390955'
+    - '0.271542641674305'
+    - '0.0126779846659365'
+    - '-0.0210045294815626'
+    - '0.0458758328769624'
+    - '10'
+- id: table_05_treatment_interactions
+  title: Table 5. Predefined PRS–treatment interaction estimates and cross-validated AUC increments.
+  columns:
+  - trait
+  - ratio_of_odds_ratios
+  - ratio_lower_95
+  - ratio_upper_95
+  - wald_p_value
+  - bh_fdr_p_value
+  - group_1_or
+  - group_1_lower_95
+  - group_1_upper_95
+  - group_2_or
+  - group_2_lower_95
+  - group_2_upper_95
+  - auc_increment
+  - brier_improvement
+  - log_loss_improvement
+  - auc_positive_repetitions
+  rows:
+  - - MDD
+    - '1.087'
+    - '0.731'
+    - '1.616'
+    - '0.68'
+    - '0.75'
+    - '0.892'
+    - '0.662'
+    - '1.201'
+    - '0.97'
+    - '0.745'
+    - '1.262'
+    - '-0.0122'
+    - '-0.0012'
+    - '-0.0026'
+    - '0'
+  - - NEUR
+    - '0.87'
+    - '0.584'
+    - '1.296'
+    - '0.492'
+    - '0.75'
+    - '1.019'
+    - '0.752'
+    - '1.383'
+    - '0.886'
+    - '0.686'
+    - '1.146'
+    - '-0.0054'
+    - '-0.001'
+    - '-0.0022'
+    - '0'
+  - - INSOM
+    - '0.937'
+    - '0.63'
+    - '1.395'
+    - '0.75'
+    - '0.75'
+    - '0.966'
+    - '0.721'
+    - '1.293'
+    - '0.905'
+    - '0.692'
+    - '1.184'
+    - '-0.0105'
+    - '-0.0013'
+    - '-0.0029'
+    - '0'
+# Supplementary tables
+- id: supplementary_table_s01_clinical_predictor_inventory
+  title: Supplementary Table S1. Complete supplied clinical-variable inventory and final predictor disposition.
+  columns:
+  - position
+  - variable
+  - source_section
+  - expected_storage_class
+  - expected_final_disposition
+  - semantic_type
+  - primary_model_role
+  - penalty_factor
+  - included_in_46_variable_summary_set
+  rows:
+  - - '1'
+    - subjectid
+    - Administrative identifiers
+    - text_or_categorical
+    - Identifier; excluded
+    - not_applicable
+    - excluded
+    - not_applicable
+    - 'FALSE'
+  - - '2'
+    - Row.names
+    - Administrative identifiers
+    - text_or_categorical
+    - Identifier; excluded
+    - not_applicable
+    - excluded
+    - not_applicable
+    - 'FALSE'
+  - - '3'
+    - bloodsampleid.x
+    - Administrative identifiers
+    - text_or_categorical
+    - Identifier; excluded
+    - not_applicable
+    - excluded
+    - not_applicable
+    - 'FALSE'
+  - - '4'
+    - drug
+    - Treatment allocation
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - forced_unpenalised
+    - '0'
+    - 'TRUE'
+  - - '5'
+    - educ
+    - Demographics and baseline characteristics
+    - integer
+    - Retained predictor
+    - count_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '6'
+    - marital.rec
+    - Demographics and baseline characteristics
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '7'
+    - occup.rec
+    - Demographics and baseline characteristics
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '8'
+    - children.rec
+    - Demographics and baseline characteristics
+    - integer
+    - Retained predictor
+    - count_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '9'
+    - smoker
+    - Demographics and baseline characteristics
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '10'
+    - bmi_wk0
+    - Demographics and baseline characteristics
+    - continuous_numeric
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '11'
+    - age
+    - Demographics and baseline characteristics
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '12'
+    - ageonset
+    - Demographics and baseline characteristics
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '13'
+    - sex
+    - Demographics and baseline characteristics
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '14'
+    - madrs1wk0
+    - Baseline MADRS items
+    - integer
+    - Retained predictor
+    - ordinal_MADRS_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '15'
+    - madrs2wk0
+    - Baseline MADRS items
+    - integer
+    - Retained predictor
+    - ordinal_MADRS_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '16'
+    - madrs3wk0
+    - Baseline MADRS items
+    - integer
+    - Retained predictor
+    - ordinal_MADRS_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '17'
+    - madrs4wk0
+    - Baseline MADRS items
+    - integer
+    - Retained predictor
+    - ordinal_MADRS_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '18'
+    - madrs5wk0
+    - Baseline MADRS items
+    - integer
+    - Retained predictor
+    - ordinal_MADRS_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '19'
+    - madrs6wk0
+    - Baseline MADRS items
+    - integer
+    - Retained predictor
+    - ordinal_MADRS_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '20'
+    - madrs7wk0
+    - Baseline MADRS items
+    - integer
+    - Retained predictor
+    - ordinal_MADRS_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '21'
+    - madrs8wk0
+    - Baseline MADRS items
+    - integer
+    - Retained predictor
+    - ordinal_MADRS_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '22'
+    - madrs9wk0
+    - Baseline MADRS items
+    - integer
+    - Retained predictor
+    - ordinal_MADRS_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '23'
+    - madrs10wk0
+    - Baseline MADRS items
+    - integer
+    - Retained predictor
+    - ordinal_MADRS_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '24'
+    - hamd1wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '25'
+    - hamd2wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '26'
+    - hamd3wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '27'
+    - hamd4wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '28'
+    - hamd5wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '29'
+    - hamd6wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '30'
+    - hamd7wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '31'
+    - hamd8wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '32'
+    - hamd9wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '33'
+    - hamd10wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '34'
+    - hamd11wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '35'
+    - hamd12wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '36'
+    - hamd13wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '37'
+    - hamd14wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '38'
+    - hamd15wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '39'
+    - hamd16wk0
+    - Baseline HAMD_HRSD items
+    - continuous_numeric
+    - Retained predictor
+    - ordinal_HAMD_item_source_fractional
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '40'
+    - hamd17wk0
+    - Baseline HAMD_HRSD items
+    - integer
+    - Retained predictor
+    - ordinal_HAMD_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '41'
+    - bdi1wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '42'
+    - bdi2wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '43'
+    - bdi3wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '44'
+    - bdi4wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '45'
+    - bdi5wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '46'
+    - bdi6wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '47'
+    - bdi7wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '48'
+    - bdi8wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '49'
+    - bdi9wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '50'
+    - bdi10wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '51'
+    - bdi11wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '52'
+    - bdi12wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '53'
+    - bdi13wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '54'
+    - bdi14wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '55'
+    - bdi15wk0
+    - Baseline BDI items
+    - integer
+    - Later exact duplicate; excluded
+    - not_applicable
+    - excluded
+    - not_applicable
+    - 'FALSE'
+  - - '56'
+    - bdi16wk0
+    - Baseline BDI items
+    - integer
+    - Later exact duplicate; excluded
+    - not_applicable
+    - excluded
+    - not_applicable
+    - 'FALSE'
+  - - '57'
+    - bdi17wk0
+    - Baseline BDI items
+    - integer
+    - Later exact duplicate; excluded
+    - not_applicable
+    - excluded
+    - not_applicable
+    - 'FALSE'
+  - - '58'
+    - bdi18wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '59'
+    - bdi19awk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '60'
+    - bdi19wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '61'
+    - bdi20wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '62'
+    - bdi21wk0
+    - Baseline BDI items
+    - integer
+    - Retained predictor
+    - ordinal_BDI_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '63'
+    - f1score0
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '64'
+    - f2score0
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '65'
+    - f3score0
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '66'
+    - f61score0
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '67'
+    - f62score0
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '68'
+    - f63score0
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '69'
+    - f64score0
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '70'
+    - f65score0
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '71'
+    - f66score0
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '72'
+    - mscore
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - count_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '73'
+    - melanch
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '74'
+    - atscore
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - count_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '75'
+    - atyp
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '76'
+    - anxdep
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '77'
+    - anxsomdep
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '78'
+    - k1
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '79'
+    - k2
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '80'
+    - k3
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '81'
+    - k4
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '82'
+    - k5
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '83'
+    - k6
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '84'
+    - k7
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '85'
+    - k8
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '86'
+    - k9
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '87'
+    - k10
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '88'
+    - k11
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '89'
+    - k12
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '90'
+    - k13
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '91'
+    - k14
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '92'
+    - k15
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '93'
+    - k16
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '94'
+    - k17
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '95'
+    - k18
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '96'
+    - k19
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '97'
+    - k20
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '98'
+    - k21
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '99'
+    - k22
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '100'
+    - k23
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '101'
+    - k24
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '102'
+    - k25
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '103'
+    - k26
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '104'
+    - k27
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '105'
+    - k28
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Later exact duplicate; excluded
+    - not_applicable
+    - excluded
+    - not_applicable
+    - 'FALSE'
+  - - '106'
+    - k29
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Later exact duplicate; excluded
+    - not_applicable
+    - excluded
+    - not_applicable
+    - 'FALSE'
+  - - '107'
+    - k30
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Retained predictor
+    - ordinal_SCAN_item
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '108'
+    - k31
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Later exact duplicate; excluded
+    - not_applicable
+    - excluded
+    - not_applicable
+    - 'FALSE'
+  - - '109'
+    - k32
+    - Depression subtypes symptom factors dimensions and SCAN variables
+    - integer
+    - Later exact duplicate; excluded
+    - not_applicable
+    - excluded
+    - not_applicable
+    - 'FALSE'
+  - - '110'
+    - newbleq1wk0
+    - Stressful life events
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '111'
+    - newbleq2wk0
+    - Stressful life events
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '112'
+    - newbleq4wk0
+    - Stressful life events
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '113'
+    - newbleq5wk0
+    - Stressful life events
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '114'
+    - newbleq6wk0
+    - Stressful life events
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '115'
+    - newbleq7wk0
+    - Stressful life events
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '116'
+    - newbleq8wk0
+    - Stressful life events
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '117'
+    - newbleq9wk0
+    - Stressful life events
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'FALSE'
+  - - '118'
+    - nevents
+    - Stressful life events
+    - integer
+    - Retained predictor
+    - count_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '119'
+    - eventsbin
+    - Stressful life events
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '120'
+    - mhssri
+    - Antidepressant medication history
+    - integer
+    - Retained predictor
+    - count_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '121'
+    - everssri
+    - Antidepressant medication history
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '122'
+    - mhtca
+    - Antidepressant medication history
+    - integer
+    - Retained predictor
+    - count_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '123'
+    - evertca
+    - Antidepressant medication history
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '124'
+    - mhdual
+    - Antidepressant medication history
+    - integer
+    - Retained predictor
+    - count_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '125'
+    - everdual
+    - Antidepressant medication history
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '126'
+    - mhoth
+    - Antidepressant medication history
+    - integer
+    - Retained predictor
+    - count_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '127'
+    - everoth
+    - Antidepressant medication history
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '128'
+    - mhantidep
+    - Antidepressant medication history
+    - integer
+    - Retained predictor
+    - count_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '129'
+    - everantidep
+    - Antidepressant medication history
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '130'
+    - concssri
+    - Antidepressant medication history
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '131'
+    - conctca
+    - Antidepressant medication history
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '132'
+    - concantidep
+    - Antidepressant medication history
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '133'
+    - mcbenzo
+    - Antidepressant medication history
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '134'
+    - mczhypn
+    - Antidepressant medication history
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '135'
+    - mhmirta
+    - Antidepressant medication history
+    - binary_integer
+    - Retained predictor
+    - binary_categorical
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '136'
+    - madrs.total
+    - Derived baseline clinical totals
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '137'
+    - hrsd.total
+    - Derived baseline clinical totals
+    - continuous_numeric
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '138'
+    - bdi.total
+    - Derived baseline clinical totals
+    - integer
+    - Retained predictor
+    - continuous_numeric
+    - regularised_clinical_predictor
+    - '1'
+    - 'TRUE'
+  - - '139'
+    - hdremit.all
+    - Outcome
+    - binary_integer
+    - Outcome; excluded
+    - not_applicable
+    - excluded
+    - not_applicable
+    - 'FALSE'
+- id: supplementary_table_s02_participant_linkage
+  title: Supplementary Table S2. Source-only participant-identifier and linkage audit.
+  columns:
+  - audit_item
+  - result
+  - interpretation_boundary
+  rows:
+  - - Clinical Row.names completeness
+    - 430/430 complete
+    - Source-only identifier audit
+  - - Clinical Row.names uniqueness
+    - 430/430 unique
+    - Source-only identifier audit
+  - - bloodsampleid.x completeness
+    - 430/430 complete
+    - Source-only identifier audit
+  - - bloodsampleid.x uniqueness
+    - 430/430 unique
+    - Source-only identifier audit
+  - - Row.names and bloodsampleid.x order
+    - Identical for 430/430 rows
+    - Clinical source fields agree
+  - - Final chromosome PSAM identifiers
+    - 430/430 matched recorded clinical IID mapping
+    - Target files preserve selected mapping
+  - - Original genotype-to-clinical linkage
+    - Assumed paired 430-row source order
+    - No genotype-side participant identifiers were supplied
+- id: supplementary_table_s03_chromosome_roundtrip
+  title: Supplementary Table S3. Chromosome-level allele-orientation decisions and exact genotype round-trip validation.
+  columns:
+  - chromosome
+  - matched_variants
+  - retained_variants
+  - excluded_eur_frequency_ties
+  - retention_percentage
+  - participants
+  - genotype_comparisons
+  - genotype_mismatches
+  - roundtrip_pass
+  rows:
+  - - '1'
+    - '12212'
+    - '12205'
+    - '7'
+    - '99.94267933180478'
+    - '430'
+    - '5248150'
+    - '0'
+    - 'TRUE'
+  - - '2'
+    - '12088'
+    - '12084'
+    - '4'
+    - '99.9669093315685'
+    - '430'
+    - '5196120'
+    - '0'
+    - 'TRUE'
+  - - '3'
+    - '9571'
+    - '9564'
+    - '7'
+    - '99.92686239682374'
+    - '430'
+    - '4112520'
+    - '0'
+    - 'TRUE'
+  - - '4'
+    - '8398'
+    - '8392'
+    - '6'
+    - '99.9285544177185'
+    - '430'
+    - '3608560'
+    - '0'
+    - 'TRUE'
+  - - '5'
+    - '8645'
+    - '8641'
+    - '4'
+    - '99.95373048004627'
+    - '430'
+    - '3715630'
+    - '0'
+    - 'TRUE'
+  - - '6'
+    - '8766'
+    - '8763'
+    - '3'
+    - '99.96577686516085'
+    - '430'
+    - '3768090'
+    - '0'
+    - 'TRUE'
+  - - '7'
+    - '8079'
+    - '8073'
+    - '6'
+    - '99.92573338284441'
+    - '430'
+    - '3471390'
+    - '0'
+    - 'TRUE'
+  - - '8'
+    - '7390'
+    - '7389'
+    - '1'
+    - '99.98646820027064'
+    - '430'
+    - '3177270'
+    - '0'
+    - 'TRUE'
+  - - '9'
+    - '7233'
+    - '7227'
+    - '6'
+    - '99.9170468685193'
+    - '430'
+    - '3107610'
+    - '0'
+    - 'TRUE'
+  - - '10'
+    - '7666'
+    - '7661'
+    - '5'
+    - '99.93477693712497'
+    - '430'
+    - '3294230'
+    - '0'
+    - 'TRUE'
+  - - '11'
+    - '7693'
+    - '7688'
+    - '5'
+    - '99.93500584947354'
+    - '430'
+    - '3305840'
+    - '0'
+    - 'TRUE'
+  - - '12'
+    - '7510'
+    - '7509'
+    - '1'
+    - '99.9866844207723'
+    - '430'
+    - '3228870'
+    - '0'
+    - 'TRUE'
+  - - '13'
+    - '5831'
+    - '5830'
+    - '1'
+    - '99.98285028297033'
+    - '430'
+    - '2506900'
+    - '0'
+    - 'TRUE'
+  - - '14'
+    - '5158'
+    - '5157'
+    - '1'
+    - '99.98061264055836'
+    - '430'
+    - '2217510'
+    - '0'
+    - 'TRUE'
+  - - '15'
+    - '4872'
+    - '4871'
+    - '1'
+    - '99.97947454844007'
+    - '430'
+    - '2094530'
+    - '0'
+    - 'TRUE'
+  - - '16'
+    - '4904'
+    - '4903'
+    - '1'
+    - '99.97960848287113'
+    - '430'
+    - '2108290'
+    - '0'
+    - 'TRUE'
+  - - '17'
+    - '4518'
+    - '4516'
+    - '2'
+    - '99.95573262505533'
+    - '430'
+    - '1941880'
+    - '0'
+    - 'TRUE'
+  - - '18'
+    - '4702'
+    - '4701'
+    - '1'
+    - '99.97873245427478'
+    - '430'
+    - '2021430'
+    - '0'
+    - 'TRUE'
+  - - '19'
+    - '3009'
+    - '3006'
+    - '3'
+    - '99.90029910269192'
+    - '430'
+    - '1292580'
+    - '0'
+    - 'TRUE'
+  - - '20'
+    - '4247'
+    - '4246'
+    - '1'
+    - '99.97645396750647'
+    - '430'
+    - '1825780'
+    - '0'
+    - 'TRUE'
+  - - '21'
+    - '2372'
+    - '2370'
+    - '2'
+    - '99.91568296795953'
+    - '430'
+    - '1019100'
+    - '0'
+    - 'TRUE'
+  - - '22'
+    - '2574'
+    - '2574'
+    - '0'
+    - '100.0'
+    - '430'
+    - '1106820'
+    - '0'
+    - 'TRUE'
+- id: supplementary_table_s04_gwas_inputs
+  title: Supplementary Table S4. GWAS inputs fixed before outcome modelling, standardisation counts and sample-size strategy.
+  columns:
+  - trait
+  - trait_label
+  - analysis_role
+  - exact_source_filename
+  - input_rows
+  - autosomal_rows
+  - sample_size_strategy
+  - outcome_used_in_standardisation
+  rows:
+  - - MDD
+    - Major depressive disorder
+    - primary
+    - pgc-mdd2025_no23andMe_eur_v3-49-24-11.tsv.gz
+    - '7363302'
+    - '7192042'
+    - Per-variant NEFF supplied by the source
+    - 'FALSE'
+  - - ANX
+    - Anxiety
+    - exploratory
+    - ANX_2026_daner_fullANX_v12_woUTAH_11022026.gz
+    - '7236041'
+    - '7236041'
+    - Two multiplied by the source Neff_half field
+    - 'FALSE'
+  - - BIP
+    - Bipolar disorder
+    - exploratory
+    - bip2024_eur_no23andMe.gz
+    - '6939126'
+    - '6939126'
+    - Two multiplied by the source Neff_half field
+    - 'FALSE'
+  - - SCZ
+    - Schizophrenia
+    - exploratory
+    - PGC3_SCZ_wave3.european.autosome.public.v3.vcf.tsv.gz
+    - '7659767'
+    - '7659767'
+    - Per-variant NEFF supplied by the source
+    - 'FALSE'
+  - - NEUR
+    - Neuroticism
+    - primary
+    - sumstats_neuroticism_ctg_format.txt.gz
+    - '10958177'
+    - '10849319'
+    - Per-variant N supplied by the source
+    - 'FALSE'
+  - - INSOM
+    - Insomnia
+    - primary
+    - insomnia_ukb2b_EUR_sumstats_20190311_with_chrX_mac_100.txt.gz
+    - '12663596'
+    - '12436059'
+    - Effective N calculated from 109548 cases and 277440 controls
+    - 'FALSE'
+  - - SWB
+    - Subjective well-being
+    - exploratory
+    - SWB_Full.txt.gz
+    - '2268674'
+    - '2268674'
+    - Constant N of 298420
+    - 'FALSE'
+  - - EA
+    - Educational attainment
+    - exploratory
+    - EA4_additive_excl_23andMe.txt.gz
+    - '10985947'
+    - '10985947'
+    - Constant N of 765283; 23andMe excluded
+    - 'FALSE'
+- id: supplementary_table_s05_prs_distributions
+  title: Supplementary Table S5. Distribution and completeness of the eight final participant-level PRS.
+  columns:
+  - trait
+  - n
+  - minimum
+  - q1
+  - median
+  - mean
+  - q3
+  - maximum
+  - sd
+  rows:
+  - - MDD
+    - '430'
+    - '-2.353'
+    - '-0.381'
+    - '0.218'
+    - '0.219'
+    - '0.831'
+    - '2.473'
+    - '0.898'
+  - - ANX
+    - '430'
+    - '-3.0'
+    - '-0.607'
+    - '0.054'
+    - '0.039'
+    - '0.715'
+    - '2.778'
+    - '1.0'
+  - - BIP
+    - '430'
+    - '-3.394'
+    - '-0.717'
+    - '0.017'
+    - '0.0'
+    - '0.741'
+    - '2.867'
+    - '1.044'
+  - - SCZ
+    - '430'
+    - '-4.054'
+    - '-0.59'
+    - '0.11'
+    - '0.064'
+    - '0.77'
+    - '2.491'
+    - '1.055'
+  - - NEUR
+    - '430'
+    - '-2.797'
+    - '-0.554'
+    - '0.119'
+    - '0.105'
+    - '0.835'
+    - '2.665'
+    - '1.002'
+  - - INSOM
+    - '430'
+    - '-3.468'
+    - '-0.661'
+    - '0.013'
+    - '0.012'
+    - '0.708'
+    - '2.576'
+    - '0.996'
+  - - SWB
+    - '430'
+    - '-2.801'
+    - '-0.802'
+    - '-0.101'
+    - '-0.122'
+    - '0.475'
+    - '3.563'
+    - '0.981'
+  - - EA
+    - '430'
+    - '-3.172'
+    - '-1.002'
+    - '-0.281'
+    - '-0.277'
+    - '0.394'
+    - '3.265'
+    - '1.01'
+- id: supplementary_table_s06_prs_correlations
+  title: Supplementary Table S6. Pearson correlations among final participant-level PRS.
+  columns:
+  - trait
+  - MDD
+  - ANX
+  - BIP
+  - SCZ
+  - NEUR
+  - INSOM
+  - SWB
+  - EA
+  rows:
+  - - MDD
+    - '1.0'
+    - '0.444443895393558'
+    - '0.209608039571699'
+    - '0.256087209119636'
+    - '0.331007142346434'
+    - '0.261884528657859'
+    - '-0.189407891217161'
+    - '-0.20022092026734'
+  - - ANX
+    - '0.444443895393558'
+    - '1.0'
+    - '0.202627950032353'
+    - '0.357747439818619'
+    - '0.326767989058377'
+    - '0.0396054635642518'
+    - '-0.102815662048643'
+    - '-0.0909658012774868'
+  - - BIP
+    - '0.209608039571699'
+    - '0.202627950032353'
+    - '1.0'
+    - '0.412507033674093'
+    - '0.143393618032267'
+    - '0.058196535922445'
+    - '-0.139386427016429'
+    - '0.00864578964319985'
+  - - SCZ
+    - '0.256087209119636'
+    - '0.357747439818619'
+    - '0.412507033674093'
+    - '1.0'
+    - '0.197698149192116'
+    - '0.0235961044096335'
+    - '-0.17485786462208'
+    - '-0.0387591463938566'
+  - - NEUR
+    - '0.331007142346434'
+    - '0.326767989058377'
+    - '0.143393618032267'
+    - '0.197698149192116'
+    - '1.0'
+    - '0.141287863170712'
+    - '-0.126472450006873'
+    - '-0.109277222334107'
+  - - INSOM
+    - '0.261884528657859'
+    - '0.0396054635642518'
+    - '0.058196535922445'
+    - '0.0235961044096335'
+    - '0.141287863170712'
+    - '1.0'
+    - '-0.0575036297804328'
+    - '-0.131192777466928'
+  - - SWB
+    - '-0.189407891217161'
+    - '-0.102815662048643'
+    - '-0.139386427016429'
+    - '-0.17485786462208'
+    - '-0.126472450006873'
+    - '-0.0575036297804328'
+    - '1.0'
+    - '0.102546065591135'
+  - - EA
+    - '-0.20022092026734'
+    - '-0.0909658012774868'
+    - '0.00864578964319985'
+    - '-0.0387591463938566'
+    - '-0.109277222334107'
+    - '-0.131192777466928'
+    - '0.102546065591135'
+    - '1.0'
+- id: supplementary_table_s07_ancestry
+  title: Supplementary Table S7. Ancestry-assignment, model-based keep-file and projected-PC results.
+  columns:
+  - output
+  - population_or_reference
+  - participants
+  - mean_or_number
+  - range_or_integrity
+  - use
+  rows:
+  - - Maximum-probability assignment
+    - EUR
+    - '430'
+    - '0.987'
+    - 0.743–0.999
+    - Descriptive assignment
+  - - Model-based keep file
+    - AFR
+    - '0'
+    - –
+    - –
+    - No retained participants
+  - - Model-based keep file
+    - AMR
+    - '0'
+    - –
+    - –
+    - No retained participants
+  - - Model-based keep file
+    - CSA
+    - '0'
+    - –
+    - –
+    - No retained participants
+  - - Model-based keep file
+    - EAS
+    - '0'
+    - –
+    - –
+    - No retained participants
+  - - Model-based keep file
+    - EUR
+    - '418'
+    - –
+    - –
+    - Strict sensitivity membership
+  - - Model-based keep file
+    - MID
+    - '0'
+    - –
+    - –
+    - No retained participants
+  - - Outside model-based keep files
+    - –
+    - '12'
+    - –
+    - –
+    - Retained in primary analysis
+  - - Projected principal components
+    - 1KG+HGDP trans-ancestry reference
+    - '430'
+    - 6 PCs
+    - Complete and finite
+    - Forced ancestry adjustment covariates
+- id: supplementary_table_s08_complete_model_performance
+  title: Supplementary Table S8. Complete primary, predefined robustness and conservative orientation-sensitivity performance
+    results.
+  columns:
+  - analysis_key
+  - analysis_label
+  - participants
+  - metric
+  - comparator
+  - prs_model
+  - increment
+  - lower_95
+  - upper_95
+  rows:
+  - - primary
+    - Primary Elastic Net
+    - '430'
+    - AUC
+    - '0.6939'
+    - '0.6884'
+    - '-0.00555'
+    - '-0.01126'
+    - '0.00036'
+  - - primary
+    - Primary Elastic Net
+    - '430'
+    - Brier score
+    - '0.2113'
+    - '0.2126'
+    - '-0.00128'
+    - '-0.00307'
+    - '0.00056'
+  - - primary
+    - Primary Elastic Net
+    - '430'
+    - Log loss
+    - '0.6159'
+    - '0.6183'
+    - '-0.00239'
+    - '-0.00675'
+    - '0.00224'
+  - - strict_eur
+    - Strict EUR Elastic Net
+    - '418'
+    - AUC
+    - '0.6934'
+    - '0.6853'
+    - '-0.00809'
+    - '-0.01304'
+    - '-0.00332'
+  - - strict_eur
+    - Strict EUR Elastic Net
+    - '418'
+    - Brier score
+    - '0.211'
+    - '0.2135'
+    - '-0.00253'
+    - '-0.00403'
+    - '-0.00107'
+  - - strict_eur
+    - Strict EUR Elastic Net
+    - '418'
+    - Log loss
+    - '0.6131'
+    - '0.6194'
+    - '-0.00632'
+    - '-0.00986'
+    - '-0.00281'
+  - - prs_focused
+    - PRS-focused Elastic Net
+    - '430'
+    - AUC
+    - '0.5082'
+    - '0.4925'
+    - '-0.01574'
+    - '-0.03632'
+    - '0.00511'
+  - - prs_focused
+    - PRS-focused Elastic Net
+    - '430'
+    - Brier score
+    - '0.2413'
+    - '0.2436'
+    - '-0.00232'
+    - '-0.00466'
+    - 5e-05
+  - - prs_focused
+    - PRS-focused Elastic Net
+    - '430'
+    - Log loss
+    - '0.677'
+    - '0.6821'
+    - '-0.00509'
+    - '-0.01016'
+    - -4e-05
+  - - summary_clinical
+    - Summary-predictor Elastic Net
+    - '430'
+    - AUC
+    - '0.7035'
+    - '0.6935'
+    - '-0.01002'
+    - '-0.02026'
+    - '0.00019'
+  - - summary_clinical
+    - Summary-predictor Elastic Net
+    - '430'
+    - Brier score
+    - '0.2123'
+    - '0.2145'
+    - '-0.00224'
+    - '-0.00627'
+    - '0.00186'
+  - - summary_clinical
+    - Summary-predictor Elastic Net
+    - '430'
+    - Log loss
+    - '0.6249'
+    - '0.6286'
+    - '-0.00373'
+    - '-0.01458'
+    - '0.0076'
+  - - random_forest
+    - Random Forest
+    - '430'
+    - AUC
+    - '0.7182'
+    - '0.7112'
+    - '-0.00703'
+    - '-0.01435'
+    - '0.00023'
+  - - random_forest
+    - Random Forest
+    - '430'
+    - Brier score
+    - '0.2069'
+    - '0.2084'
+    - '-0.00152'
+    - '-0.0031'
+    - '0.00014'
+  - - random_forest
+    - Random Forest
+    - '430'
+    - Log loss
+    - '0.6011'
+    - '0.6048'
+    - '-0.00372'
+    - '-0.00726'
+    - 9e-05
+  - - orientation_primary
+    - 'Orientation sensitivity: primary Elastic Net'
+    - '430'
+    - AUC
+    - '0.6939'
+    - '0.6894'
+    - '-0.00457'
+    - '-0.00992'
+    - '0.00111'
+  - - orientation_summary
+    - 'Orientation sensitivity: summary-predictor Elastic Net'
+    - '430'
+    - AUC
+    - '0.7035'
+    - '0.6927'
+    - '-0.01089'
+    - '-0.02101'
+    - '-0.00061'
+- id: supplementary_table_s09_individual_prs_complete
+  title: Supplementary Table S9. Complete individual-PRS association and predictive-increment results.
+  columns:
+  - trait
+  - adjusted_odds_ratio_per_SD
+  - or_lower_95
+  - or_upper_95
+  - wald_p_value
+  - bh_fdr_p_value
+  - auc_positive_repetitions
+  - auc_increment
+  - auc_lower_95
+  - auc_upper_95
+  - brier_increment
+  - brier_lower_95
+  - brier_upper_95
+  - log_loss_increment
+  - log_loss_lower_95
+  - log_loss_upper_95
+  rows:
+  - - MDD
+    - '0.934505548835992'
+    - '0.76652178815484'
+    - '1.13930306261412'
+    - '0.502849926124386'
+    - '0.606798159751127'
+    - '0'
+    - '-0.0067474443227455'
+    - '-0.0207880385177072'
+    - '0.0072745527564804'
+    - '-0.0011115600419945'
+    - '-0.0026517875406742'
+    - '0.000408109379901'
+    - '-0.0022792114607959'
+    - '-0.0055632837775571'
+    - '0.0009704418764372'
+  - - ANX
+    - '0.906420384942578'
+    - '0.743583109998184'
+    - '1.10491739684816'
+    - '0.330809294584684'
+    - '0.606798159751127'
+    - '0'
+    - '-0.0051250456370938'
+    - '-0.0255294473347937'
+    - '0.0148391292442497'
+    - '-0.0001677859484399'
+    - '-0.0022642821336877'
+    - '0.0019581160069614'
+    - '-0.0002803261025531'
+    - '-0.0048083217759409'
+    - '0.0043269573749855'
+  - - BIP
+    - '0.903941357672458'
+    - '0.740650140677962'
+    - '1.10323340702099'
+    - '0.320464236442107'
+    - '0.606798159751127'
+    - '5'
+    - '0.0015151515151515'
+    - '-0.0186656854691493'
+    - '0.0218149872216137'
+    - '-0.0006130115071273'
+    - '-0.0028122838029438'
+    - '0.0015782235087478'
+    - '-0.0015633705219374'
+    - '-0.0063273191014764'
+    - '0.0031653231304184'
+  - - SCZ
+    - '0.83106298137697'
+    - '0.681332577905064'
+    - '1.01369830448855'
+    - '0.0678856604185762'
+    - '0.271542641674305'
+    - '10'
+    - '0.0117104782767433'
+    - '-0.0224088399050748'
+    - '0.0463995755750274'
+    - '0.0007375255645449'
+    - '-0.0032858206801687'
+    - '0.0048161663978175'
+    - '0.0016542752921545'
+    - '-0.0069928817293054'
+    - '0.0104548416019854'
+  - - NEUR
+    - '0.939288102333478'
+    - '0.772161541019568'
+    - '1.14258751869496'
+    - '0.530948389782236'
+    - '0.606798159751127'
+    - '0'
+    - '-0.0088262139466958'
+    - '-0.0227696581781672'
+    - '0.0046783155348667'
+    - '-0.0008362462300368'
+    - '-0.0022772973390315'
+    - '0.000594488662357'
+    - '-0.0017722240663168'
+    - '-0.0048656318898975'
+    - '0.0012768930553613'
+  - - INSOM
+    - '0.932285793525472'
+    - '0.765673712864363'
+    - '1.13515298515072'
+    - '0.485169074434486'
+    - '0.606798159751127'
+    - '5'
+    - '-0.0003354326396495'
+    - '-0.0151201966958744'
+    - '0.0142118473895582'
+    - '-0.000958529021119'
+    - '-0.0026535097376182'
+    - '0.0006475946144686'
+    - '-0.0021252319930245'
+    - '-0.0057833425165667'
+    - '0.0013331045552966'
+  - - SWB
+    - '1.01071766425655'
+    - '0.828496184268778'
+    - '1.23301738286438'
+    - '0.91629413787371'
+    - '0.91629413787371'
+    - '0'
+    - '-0.0104257940854326'
+    - '-0.0142047165936473'
+    - '-0.0068064873128879'
+    - '-0.0011282428736168'
+    - '-0.0015066793178737'
+    - '-0.0007722607526766'
+    - '-0.0024122043700036'
+    - '-0.0032106284071725'
+    - '-0.0016584771394719'
+  - - EA
+    - '1.20619018470994'
+    - '0.987254362400506'
+    - '1.47367772389785'
+    - '0.0665835674390955'
+    - '0.271542641674305'
+    - '10'
+    - '0.0126779846659365'
+    - '-0.0210045294815626'
+    - '0.0458758328769624'
+    - '0.0003028426945344'
+    - '-0.0038708937656982'
+    - '0.0043415367567005'
+    - '0.0008084094192003'
+    - '-0.0083226192916987'
+    - '0.0096228739679962'
+- id: supplementary_table_s10_treatment_interactions_complete
+  title: Supplementary Table S10. Complete predefined PRS-by-treatment-group interaction results.
+  columns:
+  - trait
+  - ratio_of_odds_ratios
+  - ratio_lower_95
+  - ratio_upper_95
+  - wald_p_value
+  - bh_fdr_p_value
+  - group_1_or
+  - group_1_lower_95
+  - group_1_upper_95
+  - group_2_or
+  - group_2_lower_95
+  - group_2_upper_95
+  - auc_increment
+  - brier_improvement
+  - log_loss_improvement
+  - auc_positive_repetitions
+  rows:
+  - - MDD
+    - '1.087'
+    - '0.731'
+    - '1.616'
+    - '0.68'
+    - '0.75'
+    - '0.892'
+    - '0.662'
+    - '1.201'
+    - '0.97'
+    - '0.745'
+    - '1.262'
+    - '-0.0122'
+    - '-0.0012'
+    - '-0.0026'
+    - '0'
+  - - NEUR
+    - '0.87'
+    - '0.584'
+    - '1.296'
+    - '0.492'
+    - '0.75'
+    - '1.019'
+    - '0.752'
+    - '1.383'
+    - '0.886'
+    - '0.686'
+    - '1.146'
+    - '-0.0054'
+    - '-0.001'
+    - '-0.0022'
+    - '0'
+  - - INSOM
+    - '0.937'
+    - '0.63'
+    - '1.395'
+    - '0.75'
+    - '0.75'
+    - '0.966'
+    - '0.721'
+    - '1.293'
+    - '0.905'
+    - '0.692'
+    - '1.184'
+    - '-0.0105'
+    - '-0.0013'
+    - '-0.0029'
+    - '0'
+- id: supplementary_table_s11_software_reproducibility
+  title: Supplementary Table S11. Software, resampling and reproducibility record.
+  columns:
+  - component
+  - software
+  - fixed_design_or_seed
+  - scope
+  rows:
+  - - GenoPred and PRS-CS scoring
+    - R 4.2.3; Python 3.8.20; GenoPred v2.3.3-11-g75039d7; commit 75039d76b7e1918e5d43c0b3470c94e0c72332b2
+    - PRS-CS a=1, b=0.5, 1000 iterations, 500 burn-in, thinning=5, beta_std=False, chromosome seed=1, phi=auto
+    - GenoPred scoring runtime
+  - - GenoPred workflow dependencies
+    - Snakemake 7.32.3; PLINK 1.90b6.21; PLINK2 2.00a5.12LM
+    - Chromosomes 1–22
+    - Formatting, ancestry, scoring and validation
+  - - Reconstruction and reference work
+    - R 4.3.0; Python 3.11.6; PLINK2 2.00a5.10
+    - GRCh37 fixed resources
+    - Variant reconstruction and target development
+  - - Predictive modelling
+    - R 4.2.3; glmnet 4.1-8; randomForest 4.7-1.1; pROC 1.18.5
+    - 10 repeats × 10 outer folds; 5 inner folds; seed 20260715
+    - Nested CV and performance analysis
+  - - Paired performance uncertainty
+    - R 4.2.3
+    - 10,000 outcome-stratified participant bootstrap replicates; seed 20260715
+    - Fixed saved OOF predictions; no refitting
+  - - Formal calibration and coefficient stability
+    - Python 3.13.5; NumPy 2.3.5; pandas 2.2.3; Numba 0.65.1; statsmodels 0.14.6
+    - 10,000 paired bootstrap replicates; seed 20260729
+    - Predictions and 100 primary outer-fit coefficient tables
+  - - Release reporting
+    - Python >=3.11; pinned packages in pyproject.toml
+    - Release-safe aggregate inputs
+    - Tables, figures and release validation
+- id: supplementary_table_s12_orientation_sensitivity
+  title: Supplementary Table S12. Trait-specific effect of conservative target-orientation exclusion on PRS weights and participant
+    scores.
+  columns:
+  - trait
+  - accepted_nonzero_weights
+  - excluded_nonzero_weights
+  - pearson_correlation
+  - spearman_correlation
+  - mean_absolute_difference
+  - maximum_absolute_difference
+  - participants_with_changed_score
+  rows:
+  - - MDD
+    - '123217'
+    - '828'
+    - '0.998073101849143'
+    - '0.997679432329575'
+    - '0.14553488372093'
+    - '0.342'
+    - '430'
+  - - ANX
+    - '135070'
+    - '926'
+    - '0.999142165120805'
+    - '0.998917596108146'
+    - '0.139576744186047'
+    - '0.308'
+    - '430'
+  - - BIP
+    - '119348'
+    - '825'
+    - '0.995409711488318'
+    - '0.995228309864814'
+    - '0.0828232558139535'
+    - '0.289'
+    - '430'
+  - - SCZ
+    - '125395'
+    - '863'
+    - '0.99789038433598'
+    - '0.997107932752651'
+    - '0.0561604651162791'
+    - '0.222'
+    - '422'
+  - - NEUR
+    - '126229'
+    - '783'
+    - '0.995674326520853'
+    - '0.994973384210131'
+    - '0.167074418604651'
+    - '0.424'
+    - '430'
+  - - INSOM
+    - '127825'
+    - '797'
+    - '0.994332131364061'
+    - '0.993116815325206'
+    - '0.0846279069767442'
+    - '0.296'
+    - '429'
+  - - SWB
+    - '131542'
+    - '885'
+    - '0.998354430443183'
+    - '0.998022876046421'
+    - '0.0456232558139535'
+    - '0.17'
+    - '426'
+  - - EA
+    - '138758'
+    - '934'
+    - '0.997745279380606'
+    - '0.996965226433421'
+    - '0.124762790697674'
+    - '0.322'
+    - '430'
+- id: supplementary_table_s13_prs_scoring_attrition
+  title: Supplementary Table S13. Trait-specific GWAS and final PRS scoring attrition.
+  columns:
+  - trait
+  - source_rows
+  - autosomal_rows
+  - cleaned_harmonised_gwas_rows
+  - target_score_markers
+  - zero_weight_markers
+  - nonzero_posterior_weights
+  rows:
+  - - MDD
+    - '7363302'
+    - '7192042'
+    - '128669'
+    - '147370'
+    - '24153'
+    - '123217'
+  - - ANX
+    - '7236041'
+    - '7236041'
+    - '141079'
+    - '147370'
+    - '12300'
+    - '135070'
+  - - BIP
+    - '6939126'
+    - '6939126'
+    - '124796'
+    - '147370'
+    - '28022'
+    - '119348'
+  - - SCZ
+    - '7659767'
+    - '7659767'
+    - '131155'
+    - '147370'
+    - '21975'
+    - '125395'
+  - - NEUR
+    - '10958177'
+    - '10849319'
+    - '131957'
+    - '147370'
+    - '21141'
+    - '126229'
+  - - INSOM
+    - '12663596'
+    - '12436059'
+    - '133619'
+    - '147370'
+    - '19545'
+    - '127825'
+  - - SWB
+    - '2268674'
+    - '2268674'
+    - '137094'
+    - '147370'
+    - '15828'
+    - '131542'
+  - - EA
+    - '10985947'
+    - '10985947'
+    - '144996'
+    - '147370'
+    - '8612'
+    - '138758'
+- id: supplementary_table_s14_formal_calibration
+  title: Supplementary Table S14. Formal repeat-wise calibration of the primary clinical and clinical-plus-PRS models.
+  columns:
+  - model_or_contrast
+  - calibration_measure
+  - estimate
+  - lower_95
+  - upper_95
+  - ideal_value
+  rows:
+  - - Clinical + ancestry PCs
+    - Calibration-in-the-large
+    - '0.0035619887929108'
+    - '-0.0770794227265596'
+    - '0.0872561768243946'
+    - '0'
+  - - Clinical + ancestry PCs + 8 PRS
+    - Calibration-in-the-large
+    - '0.0030655968427074'
+    - '-0.0736832507701904'
+    - '0.0823410035032195'
+    - '0'
+  - - Combined minus clinical
+    - Calibration-in-the-large difference
+    - '-0.0004963919502034'
+    - '-0.0106'
+    - '0.0095'
+    - '0'
+  - - Clinical + ancestry PCs
+    - Calibration slope
+    - '0.7790289196128084'
+    - '0.5581743887217894'
+    - '1.0382077148896334'
+    - '1'
+  - - Clinical + ancestry PCs + 8 PRS
+    - Calibration slope
+    - '0.7877026095152385'
+    - '0.5605625811698688'
+    - '1.049309309414451'
+    - '1'
+  - - Combined minus clinical
+    - Calibration slope difference
+    - '0.0086736899024301'
+    - '-0.0205'
+    - '0.0387'
+    - '0'
+- id: supplementary_table_s15_prs_coefficient_stability
+  title: Supplementary Table S15. Descriptive stability of the eight PRS coefficients across primary combined-model outer
+    fits.
+  columns:
+  - PRS
+  - nonzero_all_fits
+  - nonzero_alpha_gt_0_fits
+  - predominant_sign
+  - sign_consistency_percent
+  - median_nonzero_coefficient
+  - q1_nonzero_coefficient
+  - q3_nonzero_coefficient
+  rows:
+  - - MDD
+    - 55/100
+    - 2/47
+    - Positive
+    - '61.81818181818181'
+    - '0.0024611673076945'
+    - '-0.00543075241600465'
+    - '0.0113838336983478'
+  - - ANX
+    - 54/100
+    - 1/47
+    - Negative
+    - '51.851851851851855'
+    - '-0.00019570498975659997'
+    - '-0.00414317865522055'
+    - '0.006611379758460351'
+  - - BIP
+    - 56/100
+    - 3/47
+    - Negative
+    - '96.42857142857143'
+    - '-0.0157035308968713'
+    - '-0.022266117625958197'
+    - '-0.0093260943145313'
+  - - SCZ
+    - 89/100
+    - 36/47
+    - Negative
+    - '100.0'
+    - '-0.0440852074606559'
+    - '-0.0577246316142802'
+    - '-0.0339061473413468'
+  - - NEUR
+    - 53/100
+    - 0/47
+    - Negative
+    - '67.9245283018868'
+    - '-0.0048498539097103'
+    - '-0.0102074165046381'
+    - '0.002121090825938'
+  - - INSOM
+    - 55/100
+    - 2/47
+    - Positive
+    - '85.45454545454545'
+    - '0.0115940987234493'
+    - '0.00250698645986835'
+    - '0.025428760803618902'
+  - - SWB
+    - 54/100
+    - 1/47
+    - Negative
+    - '94.44444444444444'
+    - '-0.01631900866358775'
+    - '-0.02574605211418395'
+    - '-0.0114975590877361'
+  - - EA
+    - 76/100
+    - 23/47
+    - Positive
+    - '100.0'
+    - '0.03501297252179545'
+    - '0.023212166685093124'
+    - '0.046370518105315804'

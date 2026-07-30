@@ -1,0 +1,7 @@
+# Deterministic repeated nested-CV design.
+# Model specifications are defined separately in config/model_analyses.tsv.
+master_seed: 20260715
+outer_folds: 10
+outer_repeats: 10
+inner_folds: 5
+alpha_grid: [0.0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1.0]

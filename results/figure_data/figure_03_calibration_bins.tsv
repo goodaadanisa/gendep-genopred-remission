@@ -1,0 +1,21 @@
+model_key	model_label	bin	mean_predicted_probability	observed_remission_proportion	participants
+clinical	Clinical + ancestry PCs	1	0.10454600694247254	0.16279069767441862	43
+clinical	Clinical + ancestry PCs	2	0.17594676752571362	0.18604651162790697	43
+clinical	Clinical + ancestry PCs	3	0.23429052169467968	0.3023255813953488	43
+clinical	Clinical + ancestry PCs	4	0.28484723883989	0.3023255813953488	43
+clinical	Clinical + ancestry PCs	5	0.3491553035298594	0.3488372093023256	43
+clinical	Clinical + ancestry PCs	6	0.4034068940568406	0.2558139534883721	43
+clinical	Clinical + ancestry PCs	7	0.4646501027126171	0.4883720930232558	43
+clinical	Clinical + ancestry PCs	8	0.5229881812790392	0.4883720930232558	43
+clinical	Clinical + ancestry PCs	9	0.5896890904702244	0.6046511627906976	43
+clinical	Clinical + ancestry PCs	10	0.723983554860906	0.7209302325581395	43
+combined	Clinical + ancestry PCs + 8 PRS	1	0.1119971840716289	0.16279069767441862	43
+combined	Clinical + ancestry PCs + 8 PRS	2	0.18388835251630495	0.23255813953488372	43
+combined	Clinical + ancestry PCs + 8 PRS	3	0.2397232068666273	0.27906976744186046	43
+combined	Clinical + ancestry PCs + 8 PRS	4	0.28794956922370685	0.2558139534883721	43
+combined	Clinical + ancestry PCs + 8 PRS	5	0.35155237590770955	0.3953488372093023	43
+combined	Clinical + ancestry PCs + 8 PRS	6	0.4042248269946274	0.32558139534883723	43
+combined	Clinical + ancestry PCs + 8 PRS	7	0.46496257113067724	0.4186046511627907	43
+combined	Clinical + ancestry PCs + 8 PRS	8	0.5197956344018486	0.4418604651162791	43
+combined	Clinical + ancestry PCs + 8 PRS	9	0.5780788404544663	0.6046511627906976	43
+combined	Clinical + ancestry PCs + 8 PRS	10	0.7122852754570214	0.7441860465116279	43

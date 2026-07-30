@@ -1,0 +1,9 @@
+node_id	stage	category	title	detail	parent_ids
+clinical_input	1	input	Supplied clinical and outcome data	430 participants · 139 variables|Binary remission outcome	""
+genotype_input	1	input	Supplied rsID genotype matrix	430 rows · 524,876 rsID-labelled variants|Integer calls 0/1/2	""
+clinical_processing	2	processing	Outcome-blind clinical processing	Encoding and duplicate handling|128 clinical predictors	clinical_input
+genetic_processing	2	processing	Genotype reconstruction|and polygenic scoring	GRCh37 reconstruction|147,370-variant target · 8 Bayesian PRS · 6 ancestry PCs	genotype_input
+analysis_base	3	integration	Audited clinical–genetic analysis dataset	430 participants|Clinical predictors, treatment code, PRS and ancestry PCs	clinical_processing;genetic_processing
+primary_analysis	4	analysis	Primary paired nested|cross-validation	Clinical predictors (including treatment) + 6 PCs|Same baseline + 8 PRS|10 outer folds × 10 repetitions	analysis_base
+secondary_analyses	4	analysis	Robustness and|secondary analyses	Orientation and ancestry sensitivity|Predictor-set and algorithm sensitivity|Individual PRS and treatment-group interactions	analysis_base
+evaluation	5	evaluation	Incremental predictive value of the PRS block	Held-out AUC, Brier score and log loss|Conditional paired participant-level bootstrap intervals	primary_analysis;secondary_analyses

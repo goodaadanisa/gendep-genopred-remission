@@ -1,0 +1,28 @@
+cff-version: "1.2.0"
+message: "Please cite the MSc dissertation using the metadata in preferred-citation."
+title: "Novel Application of GenoPred Polygenic Risk Scores to Predict Antidepressant Treatment Response Using AI"
+type: software
+version: "1.0.0-rc6"
+date-released: "2026-07-30"
+authors:
+  - family-names: "Goodaad"
+    given-names: "Anisa"
+repository-code: "https://github.com/goodaadanisa/gendep-genopred-remission"
+license-url: "https://github.com/goodaadanisa/gendep-genopred-remission/blob/main/LICENSE.md"
+keywords:
+  - polygenic scores
+  - GenoPred
+  - PRS-CS
+  - antidepressant remission
+  - pharmacogenomics
+  - nested cross-validation
+preferred-citation:
+  type: thesis
+  thesis-type: "MSc dissertation"
+  title: "Novel Application of GenoPred Polygenic Risk Scores to Predict Antidepressant Treatment Response Using AI"
+  authors:
+    - family-names: "Goodaad"
+      given-names: "Anisa"
+  institution:
+    name: "King's College London"
+  year: 2026

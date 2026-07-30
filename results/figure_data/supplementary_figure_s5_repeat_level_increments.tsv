@@ -1,0 +1,151 @@
+scenario_order	scenario_key	scenario_label	outer_repeat	participants	events	non_events	metric_order	metric	increment_value	positive_value_interpretation
+1	primary	Primary	1	430	166	264	1	AUC	-0.0015744797371303187	Favours addition of PRS
+1	primary	Primary	2	430	166	264	1	AUC	-0.01757028112449799	Favours addition of PRS
+1	primary	Primary	3	430	166	264	1	AUC	-0.008123402701715965	Favours addition of PRS
+1	primary	Primary	4	430	166	264	1	AUC	-0.000638919313618147	Favours addition of PRS
+1	primary	Primary	5	430	166	264	1	AUC	-0.005636181087988357	Favours addition of PRS
+1	primary	Primary	6	430	166	264	1	AUC	-0.00499726177437021	Favours addition of PRS
+1	primary	Primary	7	430	166	264	1	AUC	0.00741602774735306	Favours addition of PRS
+1	primary	Primary	8	430	166	264	1	AUC	-0.007119386637458924	Favours addition of PRS
+1	primary	Primary	9	430	166	264	1	AUC	-0.01191128148959475	Favours addition of PRS
+1	primary	Primary	10	430	166	264	1	AUC	-0.005362358525009103	Favours addition of PRS
+2	strict_eur	Strict EUR	1	418	162	256	1	AUC	-0.008921682098765427	Favours addition of PRS
+2	strict_eur	Strict EUR	2	418	162	256	1	AUC	-0.00542534722222221	Favours addition of PRS
+2	strict_eur	Strict EUR	3	418	162	256	1	AUC	-0.011911651234567944	Favours addition of PRS
+2	strict_eur	Strict EUR	4	418	162	256	1	AUC	-0.0032069830246913567	Favours addition of PRS
+2	strict_eur	Strict EUR	5	418	162	256	1	AUC	-0.00889756944444442	Favours addition of PRS
+2	strict_eur	Strict EUR	6	418	162	256	1	AUC	-0.0012779706790123635	Favours addition of PRS
+2	strict_eur	Strict EUR	7	418	162	256	1	AUC	-0.013189621913580307	Favours addition of PRS
+2	strict_eur	Strict EUR	8	418	162	256	1	AUC	-0.013575424382716084	Favours addition of PRS
+2	strict_eur	Strict EUR	9	418	162	256	1	AUC	-0.0027729552469135665	Favours addition of PRS
+2	strict_eur	Strict EUR	10	418	162	256	1	AUC	-0.01171875	Favours addition of PRS
+3	prs_focused	PRS-focused	1	430	166	264	1	AUC	-0.020376962395034615	Favours addition of PRS
+3	prs_focused	PRS-focused	2	430	166	264	1	AUC	-0.039681453085067486	Favours addition of PRS
+3	prs_focused	PRS-focused	3	430	166	264	1	AUC	-0.01766155531215774	Favours addition of PRS
+3	prs_focused	PRS-focused	4	430	166	264	1	AUC	-0.009446878422782023	Favours addition of PRS
+3	prs_focused	PRS-focused	5	430	166	264	1	AUC	-2.2818546914937787e-05	Favours addition of PRS
+3	prs_focused	PRS-focused	6	430	166	264	1	AUC	-0.015470974808324267	Favours addition of PRS
+3	prs_focused	PRS-focused	7	430	166	264	1	AUC	-0.01633807959109168	Favours addition of PRS
+3	prs_focused	PRS-focused	8	430	166	264	1	AUC	-0.0055449069003286056	Favours addition of PRS
+3	prs_focused	PRS-focused	9	430	166	264	1	AUC	0.0031489594742606375	Favours addition of PRS
+3	prs_focused	PRS-focused	10	430	166	264	1	AUC	-0.03596202993793357	Favours addition of PRS
+4	summary	Summary	1	430	166	264	1	AUC	-0.013964950711938595	Favours addition of PRS
+4	summary	Summary	2	430	166	264	1	AUC	-0.004609346476816434	Favours addition of PRS
+4	summary	Summary	3	430	166	264	1	AUC	-0.010222709017889797	Favours addition of PRS
+4	summary	Summary	4	430	166	264	1	AUC	-0.012322015334063519	Favours addition of PRS
+4	summary	Summary	5	430	166	264	1	AUC	-0.01948703906535232	Favours addition of PRS
+4	summary	Summary	6	430	166	264	1	AUC	0.004632165023731316	Favours addition of PRS
+4	summary	Summary	7	430	166	264	1	AUC	-0.008283132530120474	Favours addition of PRS
+4	summary	Summary	8	430	166	264	1	AUC	-0.0041073384446879135	Favours addition of PRS
+4	summary	Summary	9	430	166	264	1	AUC	-0.019281672143117934	Favours addition of PRS
+4	summary	Summary	10	430	166	264	1	AUC	-0.01250456370938302	Favours addition of PRS
+5	rf	RF	1	430	166	264	1	AUC	0.0013006571741511763	Favours addition of PRS
+5	rf	RF	2	430	166	264	1	AUC	-0.009264330047462521	Favours addition of PRS
+5	rf	RF	3	430	166	264	1	AUC	-0.0057046367287331146	Favours addition of PRS
+5	rf	RF	4	430	166	264	1	AUC	-0.01025693683826212	Favours addition of PRS
+5	rf	RF	5	430	166	264	1	AUC	-0.007028112449799173	Favours addition of PRS
+5	rf	RF	6	430	166	264	1	AUC	-0.006240872581234069	Favours addition of PRS
+5	rf	RF	7	430	166	264	1	AUC	-0.008830777656078759	Favours addition of PRS
+5	rf	RF	8	430	166	264	1	AUC	-0.01049653158086894	Favours addition of PRS
+5	rf	RF	9	430	166	264	1	AUC	-0.008146221248630847	Favours addition of PRS
+5	rf	RF	10	430	166	264	1	AUC	-0.005613362541073363	Favours addition of PRS
+1	primary	Primary	1	430	166	264	2	Brier	-0.0002562682740269995	Favours addition of PRS
+1	primary	Primary	2	430	166	264	2	Brier	-0.005036569026520277	Favours addition of PRS
+1	primary	Primary	3	430	166	264	2	Brier	-0.0016321361174635174	Favours addition of PRS
+1	primary	Primary	4	430	166	264	2	Brier	-7.533037470441872e-05	Favours addition of PRS
+1	primary	Primary	5	430	166	264	2	Brier	-0.001372062190736295	Favours addition of PRS
+1	primary	Primary	6	430	166	264	2	Brier	-0.001234829620371275	Favours addition of PRS
+1	primary	Primary	7	430	166	264	2	Brier	0.0022307261443172965	Favours addition of PRS
+1	primary	Primary	8	430	166	264	2	Brier	-0.0013685005591368427	Favours addition of PRS
+1	primary	Primary	9	430	166	264	2	Brier	-0.004397748441322957	Favours addition of PRS
+1	primary	Primary	10	430	166	264	2	Brier	0.0003137939811727608	Favours addition of PRS
+2	strict_eur	Strict EUR	1	418	162	256	2	Brier	-0.0028388837373049813	Favours addition of PRS
+2	strict_eur	Strict EUR	2	418	162	256	2	Brier	-0.001846481665794264	Favours addition of PRS
+2	strict_eur	Strict EUR	3	418	162	256	2	Brier	-0.0031401369381156286	Favours addition of PRS
+2	strict_eur	Strict EUR	4	418	162	256	2	Brier	-0.0011907071481874199	Favours addition of PRS
+2	strict_eur	Strict EUR	5	418	162	256	2	Brier	-0.002739772908975785	Favours addition of PRS
+2	strict_eur	Strict EUR	6	418	162	256	2	Brier	-0.0006610513469691992	Favours addition of PRS
+2	strict_eur	Strict EUR	7	418	162	256	2	Brier	-0.0037520964447940175	Favours addition of PRS
+2	strict_eur	Strict EUR	8	418	162	256	2	Brier	-0.004208804767774077	Favours addition of PRS
+2	strict_eur	Strict EUR	9	418	162	256	2	Brier	-0.0007743958795011774	Favours addition of PRS
+2	strict_eur	Strict EUR	10	418	162	256	2	Brier	-0.004114760364419767	Favours addition of PRS
+3	prs_focused	PRS-focused	1	430	166	264	2	Brier	-0.002400706849973039	Favours addition of PRS
+3	prs_focused	PRS-focused	2	430	166	264	2	Brier	-0.0064901179400720654	Favours addition of PRS
+3	prs_focused	PRS-focused	3	430	166	264	2	Brier	-0.0022851745602929796	Favours addition of PRS
+3	prs_focused	PRS-focused	4	430	166	264	2	Brier	-0.0019109139776551098	Favours addition of PRS
+3	prs_focused	PRS-focused	5	430	166	264	2	Brier	-0.0009690937205504291	Favours addition of PRS
+3	prs_focused	PRS-focused	6	430	166	264	2	Brier	-0.0030112481692828597	Favours addition of PRS
+3	prs_focused	PRS-focused	7	430	166	264	2	Brier	-0.0012551048758461525	Favours addition of PRS
+3	prs_focused	PRS-focused	8	430	166	264	2	Brier	-0.0007702217744503526	Favours addition of PRS
+3	prs_focused	PRS-focused	9	430	166	264	2	Brier	-0.0011193443500754074	Favours addition of PRS
+3	prs_focused	PRS-focused	10	430	166	264	2	Brier	-0.003003844563228747	Favours addition of PRS
+4	summary	Summary	1	430	166	264	2	Brier	-0.004451946056755973	Favours addition of PRS
+4	summary	Summary	2	430	166	264	2	Brier	0.0005249679201440594	Favours addition of PRS
+4	summary	Summary	3	430	166	264	2	Brier	-0.001982297332976002	Favours addition of PRS
+4	summary	Summary	4	430	166	264	2	Brier	-0.0041086502599912145	Favours addition of PRS
+4	summary	Summary	5	430	166	264	2	Brier	-0.006501796929370113	Favours addition of PRS
+4	summary	Summary	6	430	166	264	2	Brier	0.005191946592126073	Favours addition of PRS
+4	summary	Summary	7	430	166	264	2	Brier	-0.002557271243720488	Favours addition of PRS
+4	summary	Summary	8	430	166	264	2	Brier	0.0010008680343372989	Favours addition of PRS
+4	summary	Summary	9	430	166	264	2	Brier	-0.003218586857320904	Favours addition of PRS
+4	summary	Summary	10	430	166	264	2	Brier	-0.00629446449256485	Favours addition of PRS
+5	rf	RF	1	430	166	264	2	Brier	-0.0007705581395349159	Favours addition of PRS
+5	rf	RF	2	430	166	264	2	Brier	-0.002512009302325563	Favours addition of PRS
+5	rf	RF	3	430	166	264	2	Brier	-0.0004826511627906982	Favours addition of PRS
+5	rf	RF	4	430	166	264	2	Brier	-0.002440679069767443	Favours addition of PRS
+5	rf	RF	5	430	166	264	2	Brier	-0.0009631999999999974	Favours addition of PRS
+5	rf	RF	6	430	166	264	2	Brier	-0.001293237209302328	Favours addition of PRS
+5	rf	RF	7	430	166	264	2	Brier	-0.0018677209302325748	Favours addition of PRS
+5	rf	RF	8	430	166	264	2	Brier	-0.0019467162790697268	Favours addition of PRS
+5	rf	RF	9	430	166	264	2	Brier	-0.0018992465116278723	Favours addition of PRS
+5	rf	RF	10	430	166	264	2	Brier	-0.0010118976744185881	Favours addition of PRS
+1	primary	Primary	1	430	166	264	3	Log loss	-0.0019163050527855052	Favours addition of PRS
+1	primary	Primary	2	430	166	264	3	Log loss	-0.011032029626424689	Favours addition of PRS
+1	primary	Primary	3	430	166	264	3	Log loss	-0.002037331457454994	Favours addition of PRS
+1	primary	Primary	4	430	166	264	3	Log loss	0.0004236373413053496	Favours addition of PRS
+1	primary	Primary	5	430	166	264	3	Log loss	-0.0025275727862663633	Favours addition of PRS
+1	primary	Primary	6	430	166	264	3	Log loss	-0.0031732786957645587	Favours addition of PRS
+1	primary	Primary	7	430	166	264	3	Log loss	0.006443508774674478	Favours addition of PRS
+1	primary	Primary	8	430	166	264	3	Log loss	-0.002279576995714905	Favours addition of PRS
+1	primary	Primary	9	430	166	264	3	Log loss	-0.013764417742137436	Favours addition of PRS
+1	primary	Primary	10	430	166	264	3	Log loss	0.005930201361448728	Favours addition of PRS
+2	strict_eur	Strict EUR	1	418	162	256	3	Log loss	-0.006710419498204279	Favours addition of PRS
+2	strict_eur	Strict EUR	2	418	162	256	3	Log loss	-0.005278181989350372	Favours addition of PRS
+2	strict_eur	Strict EUR	3	418	162	256	3	Log loss	-0.008185455752879323	Favours addition of PRS
+2	strict_eur	Strict EUR	4	418	162	256	3	Log loss	-0.0025022740906557317	Favours addition of PRS
+2	strict_eur	Strict EUR	5	418	162	256	3	Log loss	-0.007058176266324989	Favours addition of PRS
+2	strict_eur	Strict EUR	6	418	162	256	3	Log loss	-0.004358409155944543	Favours addition of PRS
+2	strict_eur	Strict EUR	7	418	162	256	3	Log loss	-0.009610911635270836	Favours addition of PRS
+2	strict_eur	Strict EUR	8	418	162	256	3	Log loss	-0.00931152677895053	Favours addition of PRS
+2	strict_eur	Strict EUR	9	418	162	256	3	Log loss	-0.0003236135461178735	Favours addition of PRS
+2	strict_eur	Strict EUR	10	418	162	256	3	Log loss	-0.009840968315434573	Favours addition of PRS
+3	prs_focused	PRS-focused	1	430	166	264	3	Log loss	-0.004988283283606121	Favours addition of PRS
+3	prs_focused	PRS-focused	2	430	166	264	3	Log loss	-0.014400832325704105	Favours addition of PRS
+3	prs_focused	PRS-focused	3	430	166	264	3	Log loss	-0.004589498305900941	Favours addition of PRS
+3	prs_focused	PRS-focused	4	430	166	264	3	Log loss	-0.004541797276212511	Favours addition of PRS
+3	prs_focused	PRS-focused	5	430	166	264	3	Log loss	-0.002320671838551891	Favours addition of PRS
+3	prs_focused	PRS-focused	6	430	166	264	3	Log loss	-0.0069835158409199405	Favours addition of PRS
+3	prs_focused	PRS-focused	7	430	166	264	3	Log loss	-0.002823559558491784	Favours addition of PRS
+3	prs_focused	PRS-focused	8	430	166	264	3	Log loss	-0.0015090636521231104	Favours addition of PRS
+3	prs_focused	PRS-focused	9	430	166	264	3	Log loss	-0.002687732008488819	Favours addition of PRS
+3	prs_focused	PRS-focused	10	430	166	264	3	Log loss	-0.006046836020745738	Favours addition of PRS
+4	summary	Summary	1	430	166	264	3	Log loss	-0.00947760890228122	Favours addition of PRS
+4	summary	Summary	2	430	166	264	3	Log loss	0.010932295206325993	Favours addition of PRS
+4	summary	Summary	3	430	166	264	3	Log loss	-0.0030141420182419054	Favours addition of PRS
+4	summary	Summary	4	430	166	264	3	Log loss	-0.0118985448986062	Favours addition of PRS
+4	summary	Summary	5	430	166	264	3	Log loss	-0.015788509927533	Favours addition of PRS
+4	summary	Summary	6	430	166	264	3	Log loss	0.023238853994618003	Favours addition of PRS
+4	summary	Summary	7	430	166	264	3	Log loss	-0.011217218716505495	Favours addition of PRS
+4	summary	Summary	8	430	166	264	3	Log loss	0.006450604511516245	Favours addition of PRS
+4	summary	Summary	9	430	166	264	3	Log loss	-0.003530035510181939	Favours addition of PRS
+4	summary	Summary	10	430	166	264	3	Log loss	-0.023035529547153266	Favours addition of PRS
+5	rf	RF	1	430	166	264	3	Log loss	-0.002670036087562111	Favours addition of PRS
+5	rf	RF	2	430	166	264	3	Log loss	-0.00650166409829267	Favours addition of PRS
+5	rf	RF	3	430	166	264	3	Log loss	-0.0009537386235105583	Favours addition of PRS
+5	rf	RF	4	430	166	264	3	Log loss	-0.00574610271190068	Favours addition of PRS
+5	rf	RF	5	430	166	264	3	Log loss	-0.0021497562558948635	Favours addition of PRS
+5	rf	RF	6	430	166	264	3	Log loss	-0.00248672866691535	Favours addition of PRS
+5	rf	RF	7	430	166	264	3	Log loss	-0.004893021017917776	Favours addition of PRS
+5	rf	RF	8	430	166	264	3	Log loss	-0.004936746601245878	Favours addition of PRS
+5	rf	RF	9	430	166	264	3	Log loss	-0.00396323469632609	Favours addition of PRS
+5	rf	RF	10	430	166	264	3	Log loss	-0.0028749756519048653	Favours addition of PRS

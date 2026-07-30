@@ -1,0 +1,7 @@
+component	R	Python	other_software	scope
+GenoPred_and_PRSCS_scoring	4.2.3	3.8.20	GenoPred v2.3.3-11-g75039d7; commit 75039d76b7e1918e5d43c0b3470c94e0c72332b2	GenoPred scoring runtime
+GenoPred_workflow_dependencies			Snakemake 7.32.3; PLINK 1.90b6.21; PLINK2 2.00a5.12LM	Formatting, ancestry, scoring and validation
+Target_metadata_and_reference_work	4.3.0	3.11.6	PLINK2 2.00a5.10	Variant metadata annotation and target development
+Predictive_modelling	4.2.3		glmnet 4.1-8; randomForest 4.7-1.1; pROC 1.18.5	Nested CV, audits and paired performance bootstrap
+Formal_calibration_and_coefficient_stability		3.13.5	NumPy 2.3.5; pandas 2.2.3; Numba 0.65.1; statsmodels 0.14.6	Prediction and coefficient analysis
+Public_workflow_and_reporting		>=3.11	Pinned Python packages in pyproject.toml	Synthetic tests, release tables, figures and manifests

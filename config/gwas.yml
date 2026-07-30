@@ -1,0 +1,64 @@
+# Exact discovery GWAS inputs used for the dissertation.
+# Files are not redistributed; paths are resolved beneath
+# external_resources.gwas_directory unless an absolute source path is supplied.
+traits:
+  MDD:
+    filename: pgc-mdd2025_no23andMe_eur_v3-49-24-11.tsv.gz
+    transform: mdd
+    delimiter: tab
+    expected_source_rows: 7363302
+    expected_autosomal_rows: 7192042
+    sample_size_strategy: Per-variant NEFF supplied by the source
+  ANX:
+    filename: ANX_2026_daner_fullANX_v12_woUTAH_11022026.gz
+    transform: anx
+    delimiter: tab
+    expected_source_rows: 7236041
+    expected_autosomal_rows: 7236041
+    sample_size_strategy: Two multiplied by the source Neff_half field
+  BIP:
+    filename: bip2024_eur_no23andMe.gz
+    transform: bip
+    delimiter: whitespace
+    expected_source_rows: 6939126
+    expected_autosomal_rows: 6939126
+    sample_size_strategy: Two multiplied by the source Neff_half field
+  SCZ:
+    filename: PGC3_SCZ_wave3.european.autosome.public.v3.vcf.tsv.gz
+    transform: scz
+    delimiter: tab
+    expected_source_rows: 7659767
+    expected_autosomal_rows: 7659767
+    sample_size_strategy: Per-variant NEFF supplied by the source
+  NEUR:
+    filename: sumstats_neuroticism_ctg_format.txt.gz
+    transform: neur
+    delimiter: tab
+    expected_source_rows: 10958177
+    expected_autosomal_rows: 10849319
+    sample_size_strategy: Per-variant N supplied by the source
+  INSOM:
+    filename: insomnia_ukb2b_EUR_sumstats_20190311_with_chrX_mac_100.txt.gz
+    transform: insom
+    delimiter: tab
+    expected_source_rows: 12663596
+    expected_autosomal_rows: 12436059
+    cases: 109548
+    controls: 277440
+    sample_size_strategy: Effective N calculated from 109548 cases and 277440 controls
+  SWB:
+    filename: SWB_Full.txt.gz
+    transform: swb
+    delimiter: tab
+    expected_source_rows: 2268674
+    expected_autosomal_rows: 2268674
+    fixed_n: 298420
+    sample_size_strategy: Constant N of 298420
+  EA:
+    filename: EA4_additive_excl_23andMe.txt.gz
+    transform: ea
+    delimiter: tab
+    expected_source_rows: 10985947
+    expected_autosomal_rows: 10985947
+    fixed_n: 765283
+    sample_size_strategy: Constant N of 765283; 23andMe excluded

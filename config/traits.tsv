@@ -1,0 +1,9 @@
+trait	label	role
+MDD	Major depressive disorder	primary
+ANX	Anxiety	exploratory
+BIP	Bipolar disorder	exploratory
+SCZ	Schizophrenia	exploratory
+NEUR	Neuroticism	primary
+INSOM	Insomnia	primary
+SWB	Subjective well-being	exploratory
+EA	Educational attainment	exploratory

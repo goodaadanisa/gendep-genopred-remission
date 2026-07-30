@@ -1,0 +1,79 @@
+cohort:
+  participants: 430
+  remitters: 166
+  non_remitters: 264
+  clinical_columns: 139
+  treatment_group_1: 210
+  treatment_group_2: 220
+  strict_eur_participants: 418
+variants:
+  supplied: 524876
+  reconstructed_autosomal_snvs: 492071
+  official_genopred_overlap: 147438
+  final_oriented_target: 147370
+  prscs_compatible: 141038
+  orientation_sensitivity_retained: 140085
+  roundtrip_comparisons: 63369100
+  roundtrip_mismatches: 0
+  excluded_non_snv: 21041
+  unresolved_rsids: 11764
+  prscs_same_order: 38088
+  prscs_swapped_order: 102950
+  absent_from_prscs: 6332
+  orientation_correlation: 0.9869353564843381
+  orientation_sample_major_agreement: 146366
+  orientation_sample_frequency_flip: 899
+  orientation_sample_frequency_tie: 105
+  excluded_eur_frequency_ties: 68
+primary_model:
+  repeat_mean_auc:
+    clinical: 0.693930266520628
+    combined: 0.688378514056225
+  auc_increment:
+    estimate: -0.00555175246440307
+    lower_95: -0.011261124041621
+    upper_95: 0.000358308232931726
+  brier_increment:
+    estimate: -0.00128289244787926
+    lower_95: -0.00307040900132819
+    upper_95: 0.000555958542866695
+  log_loss_increment:
+    estimate: -0.00239331648791199
+    lower_95: -0.0067537999891963
+    upper_95: 0.00224016279624752
+calibration:
+  clinical_intercept: 0.0035619887929108
+  combined_intercept: 0.0030655968427074
+  clinical_slope: 0.7790289196128084
+  combined_slope: 0.7877026095152385
+tolerance:
+  absolute: 1.0e-12
+prs:
+  traits: 8
+  participants: 430
+  maximum_absolute_off_diagonal_correlation: 0.444443895393558
+  strongest_pair: MDD-ANX
+  minimum_pairwise_correlation: -0.20022092026734
+  minimum_pair: MDD-EA
+ancestry:
+  maximum_probability_eur_participants: 430
+  mean_maximum_probability: 0.9871976744186046
+  minimum_maximum_probability: 0.743
+  maximum_maximum_probability: 0.999
+  strict_eur_keep_participants: 418
+  outside_all_model_based_keeps: 12
+  projected_pc_columns: 6
+predictors:
+  identifiers: 3
+  outcome_columns: 1
+  baseline_candidates: 135
+  exact_duplicate_groups: 6
+  removed_later_duplicates: 7
+  comprehensive_clinical: 128
+  summary_clinical: 46
+  primary_comprehensive_clinical: 134
+  primary_comprehensive_combined: 142
+  secondary_prs_focused: 15
+  sensitivity_summary_clinical: 52
+  sensitivity_summary_combined: 60
+  analysis_columns: 154

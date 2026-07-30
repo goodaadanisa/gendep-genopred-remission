@@ -1,0 +1,5 @@
+model_or_contrast	metric	point_estimate_mean_across_repeats	lower_95_percentile	upper_95_percentile
+Clinical + ancestry PCs	Calibration-in-the-large	0.0035619887929108	-0.0770794227265596	0.0872561768243946
+Clinical + ancestry PCs + 8 PRS	Calibration-in-the-large	0.0030655968427074	-0.0736832507701904	0.0823410035032195
+Clinical + ancestry PCs	Calibration slope	0.7790289196128084	0.5581743887217894	1.0382077148896334
+Clinical + ancestry PCs + 8 PRS	Calibration slope	0.7877026095152385	0.5605625811698688	1.049309309414451

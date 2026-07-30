@@ -1,0 +1,16 @@
+parameter	value
+master_seed	20260715
+outer_repeats	10
+outer_folds	10
+inner_folds	5
+alpha_grid	0,0.1,0.2,0.3,0.4,0.5,0.6,0.7,0.8,0.9,1
+elastic_net_maxit	1000000
+random_forest_ntree	500
+random_forest_nodesize	1,5,10
+probability_epsilon	1e-15
+tie_tolerance	1e-12
+bootstrap_replicates	10000
+bootstrap_seed	20260715
+calibration_bootstrap_seed	20260729
+expected_glmnet_version	4.1-8
+expected_randomForest_version	4.7-1.1

@@ -1,0 +1,6 @@
+scenario_order	scenario_key	scenario_label	source_file	source_sha256	participants	events	non_events	outer_repetitions	comparison
+1	primary	Primary	primary_nested_cv_repeat_metrics.tsv	a451cdb1dc768bf3a53a44e509aed030e3eac109790533e7cc38517862494b65	430	166	264	10	Eight PRS added to comprehensive clinical plus ancestry-PC comparator
+2	strict_eur	Strict EUR	eur_nested_cv_repeat_metrics.tsv	d8da1e13c7f124b486725030746a20dbd909b325a610744111a4545fc0581e08	418	162	256	10	Primary Elastic Net restricted to strict model-based EUR subset
+3	prs_focused	PRS-focused	prs_focused_nested_cv_repeat_metrics.tsv	710837379335075357ca509442002ffbc5ca99b27ac8d3f23b2cac7db0a6a119	430	166	264	10	Eight PRS added to treatment plus six ancestry PCs
+4	summary	Summary	summary_sensitivity_nested_cv_repeat_metrics.tsv	b14d488c3b1d4bc9732f9a5d397078b2e56532f4abbec5861cabfa31f2a05140	430	166	264	10	Eight PRS added to summary-predictor plus ancestry-PC comparator
+5	rf	RF	rf_primary_repeat_metrics.tsv	1a2cfcd32cf6224fa55a82460033ee8da24d73b606b37b13db06dd2784ac6d8c	430	166	264	10	Eight PRS added to nonlinear Random Forest comparator

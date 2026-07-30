@@ -1,0 +1,9 @@
+metric	value
+matched_variants	147438
+retained_variants	147370
+excluded_eur_frequency_ties	68
+chromosomes	22
+participants	430
+participant_genotype_comparisons	63369100
+participant_genotype_mismatches	0
+all_chromosomes_pass	TRUE

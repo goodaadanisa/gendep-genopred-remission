@@ -1,0 +1,32 @@
+# Fixed settings for the eight-trait GenoPred/PRS-CS-auto analysis.
+target_name: GENDEP
+target_population: TRANS
+traits: [MDD, ANX, BIP, SCZ, NEUR, INSOM, SWB, EA]
+chromosomes: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22]
+
+software:
+  genopred_commit: 75039d76b7e1918e5d43c0b3470c94e0c72332b2
+  genopred_description: v2.3.3-11-g75039d7
+  genoutils_commit: 6334159ab5d95ce936896e6938a1031c38ed4f30
+
+prscs:
+  method: prscs
+  phi: auto
+  a: 1
+  b: 0.5
+  iterations: 1000
+  burn_in: 500
+  thinning: 5
+  beta_std: false
+  seed: 1
+  ld_reference: 1kg_eur
+  target_outcome_tuning: false
+
+expected:
+  participants: 430
+  target_markers: 147370
+  ld_compatible_markers_before_trait_cleaning: 141038
+  projected_pcs: 6
+  maximum_probability_population: EUR
+  maximum_probability_population_participants: 430
+  strict_eur_keep_participants: 418

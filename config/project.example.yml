@@ -1,0 +1,75 @@
+project_root: /path/to/gendep-genopred-remission
+controlled_data:
+  clinical_workbook: /authorised/path/data-rem.xlsx
+  genotype_rdata: /authorised/path/dataGen.RData
+  dictionary: /authorised/path/dictionary.docx
+  validated_sample_ids: /authorised/path/validated_sample_ids.txt
+  genotype_variant_list: work/genotype/source_audit/source_variant_ids.txt
+  genotype_frequency_table: work/genotype/source_audit/source_genotype_frequencies.tsv.gz
+external_resources:
+  ensembl_vcf_pattern: /path/to/ensembl/grch37/homo_sapiens-chr{chromosome}.vcf.gz
+  genopred_pvar_pattern: /path/to/GenoPred/pipeline/resources/data/ref/ref.chr{chromosome}.pvar
+  genopred_eur_afreq_pattern: /path/to/GenoPred/pipeline/resources/data/ref/freq_files/EUR/ref.EUR.chr{chromosome}.afreq
+  prscs_snpinfo: /path/to/GenoPred/pipeline/resources/data/prscs_ref/1kg/ldblk_1kg_eur/snpinfo_1kg_hm3
+  genopred: /path/to/GenoPred
+  prscs_ld_reference: /path/to/ldblk_1kg_eur
+  gwas_directory: /path/to/gwas/raw
+  genopred_root: /path/to/GenoPred
+  genopred_base_config: /path/to/GenoPred/example_input/config.yaml
+  genopred_snakemake: /path/to/snakemake
+  genopred_runtime_rscript: /path/to/Rscript
+  genopred_runtime_python: /path/to/python
+  genopred_runtime_plink: /path/to/plink
+  genopred_runtime_plink2: /path/to/plink2
+  genopred_custom_reference: /path/to/custom/genopred/reference
+  genopred_resource_directory: /path/to/GenoPred/pipeline/resources
+genotype:
+  chromosomes:
+  - 1
+  - 2
+  - 3
+  - 4
+  - 5
+  - 6
+  - 7
+  - 8
+  - 9
+  - 10
+  - 11
+  - 12
+  - 13
+  - 14
+  - 15
+  - 16
+  - 17
+  - 18
+  - 19
+  - 20
+  - 21
+  - 22
+outputs:
+  genotype_source_audit: work/genotype/source_audit
+  genotype_reconstruction: work/genotype/reconstruction
+  genotype_target: work/genotype/target
+  genotype_validation: work/genotype/target_validation
+  gwas_standardised: work/prs/gwas_standardised
+  gwas_audit: work/prs/gwas_audit
+  genopred_run: work/prs/genopred
+  prs_final: work/prs/final
+  prs_validation: work/prs/validation
+  clinical_audit: work/analysis/clinical_audit
+  predictor_policy: work/analysis/predictor_policy
+  analysis_datasets: work/analysis/datasets
+  analysis_validation: work/analysis/validation
+  secondary_analyses: work/secondary
+  orientation_sensitivity: work/sensitivity/orientation
+execution:
+  slurm_partition: msc_appbio
+  threads: 4
+prs:
+  target_prefix: work/genotype/target_validation/pfiles/GENDEP
+analysis_inputs:
+  prs_matrix: work/prs/final/gendep_prscs_auto_8trait_prs.tsv.gz
+  projected_pcs: /path/to/GenoPred/projected_six_pcs.eigenvec
+  ancestry_probabilities: /path/to/GenoPred/GENDEP.Ancestry.model_pred
+  strict_eur_keep: /path/to/GenoPred/model_based/EUR.keep

@@ -1,0 +1,34 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+
+# R
+.Rhistory
+.RData
+.Rproj.user/
+renv/library/
+
+# Private configuration and execution products
+config/project.yml
+logs/
+.tmp/
+work/
+
+# Controlled or large data
+/data/raw/
+/data/external/
+/data/interim/
+/data/processed/
+/results/participant_level/
+/results/model_objects/
+
+# Temporary reporting extraction and optional formats
+/results/figures/*.svg
+/results/figures/*.pdf
+
+/results/manifests/
+
+# Python package build metadata
+*.egg-info/
